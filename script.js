@@ -78,21 +78,6 @@ if (window.innerWidth < 500) {
   };
 }
 
-document.querySelectorAll('.question_button').forEach(button => {
-	button.addEventListener('click', () => {
-		const answer = button.nextElementSibling;
-		const isActive = button.classList.toggle('active');
-
-
-		const children = Array.from(answer.children);
-		if (isActive) {
-    answer.style.display = "block";
-		} else {
-      answer.style.display = "none";
-		}
-	});
-});
-
 gsap.registerPlugin(ScrollTrigger);
 
 let box = document.querySelector('.scrollerbox');
