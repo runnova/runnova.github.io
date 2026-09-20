@@ -89,7 +89,6 @@ li {
         &:hover,
         &:focus {
             transform: scale(.9);
-            box-shadow: 0 0 5em 3em #ffffff;
         }
     }
 }
