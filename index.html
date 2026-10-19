@@ -30,14 +30,20 @@
             rel="stylesheet"
         />
 
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-E2G3SG0J1W"></script>
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-E2G3SG0J1W"
+        ></script>
         <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-          gtag('config', 'G-E2G3SG0J1W');
+            gtag("config", "G-E2G3SG0J1W");
         </script>
+        <script src="projects.js" defer></script>
     </head>
 
     <body>
@@ -67,6 +73,54 @@
                 />
             </div>
             <div class="fill"></div>
+            <div class="slideshow">
+                <div class="header x">
+                    <span>Comments</span>
+                    <div class="fill"></div>
+                    <a href="https://pounce.rotur.dev/p/df862c5ad9d4ba17970086d6c1039c2d">write yours</a>
+                </div>
+                <div class="viewport" id="viewport">
+                    <div class="status">Loading replies...</div>
+                </div>
+                <div class="footer">
+                    <svg
+                        style="margin: 0 .5em; opacity: .5;"
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="17"
+                        height="17"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-paw-print"
+                        aria-hidden="true"
+                    >
+                        <circle cx="11" cy="4" r="2"></circle>
+                        <circle cx="18" cy="8" r="2"></circle>
+                        <circle cx="20" cy="16" r="2"></circle>
+                        <path
+                            d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"
+                        ></path>
+                    </svg>
+                    <span class="counter" id="counter">0 / 0</span>
+                    <div class="fill"></div>
+                    <div class="controls">
+                        <button id="prev" aria-label="Previous reply" disabled>
+                            <svg class="chevron" viewBox="0 0 24 24">
+                                <path d="m15 18-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <button id="next" aria-label="Next reply" disabled>
+                            <svg class="chevron" viewBox="0 0 24 24">
+                                <path d="m9 18 6-6-6-6" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <script src="script.js"></script>
             <div class="social_links">
                 <div
                     onclick="
@@ -104,11 +158,7 @@
                         )
                     "
                 >
-                    <img
-                        src="/temp/rotur.png"
-                        style="filter: invert(1)"
-                        alt="Rotur"
-                    />
+                    <img src="/temp/rotur.png" alt="Rotur" />
                     <span>darkdot</span>
                 </div>
                 <div onclick="window.open('', '_blank')">
@@ -148,242 +198,18 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+
+        <div class="col data">
             <div class="card">
                 <b>Things im working on / made</b>
-                <ul>
-                    <li>
-                        data representation
-                        <ul>
-                            <li>
-                                <a href="https://runnova.github.io/pomelo">
-                                    <img
-                                        src="https://cdn-icons-png.flaticon.com/512/5302/5302369.png"
-                                        alt="Indigo"
-                                    />
-                                    pomelo</a
-                                >
-                                domain model editor for presentations [<a
-                                    href="https://www.solidjs.com"
-                                    >SolidJS</a
-                                >
-                                &bull;
-                                <a href="https://github.com/runnova/pomelo"
-                                    >repo </a
-                                >]
-                            </li>
-                            <li>
-                                <a
-                                    href="https://adthoughtsglobal.github.io/lroots/"
-                                >
-                                    <img
-                                        src="https://cdn-icons-png.magnific.com/256/12893/12893129.png?semt=ais_white_label"
-                                        alt="Indigo"
-                                    />
-                                    linkedRoots</a
-                                >
-                                structured data representation format and
-                                browser [<a
-                                    href="https://github.com/adthoughtsglobal/lroots"
-                                    >repo</a
-                                >]
-                            </li>
-                            <li>
-                                <a
-                                    href="https://adthoughtsglobal.github.io/overthink/"
-                                >
-                                    <img
-                                        src="https://adthoughtsglobal.github.io/overthink/assets/logo.png"
-                                        alt="Ozone"
-                                    />
-                                    Overthink</a
-                                >
-                                webapp for making hierarchical lists with ease
-                                [<a
-                                    href="https://github.com/adthoughtsglobal/overthink"
-                                    >repo</a
-                                >]
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        consumer projects
-                        <ul>
-                            <li>
-
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        Web based environment projects
-                        <ul>
-                            <li>
-                                <a href="https://runnova.github.io/nova/">
-                                    <img
-                                        src="https://runnova.github.io/NovaOS/n.png"
-                                        alt="NovaOS"
-                                    />
-                                    NovaOS</a
-                                >
-                                Web Desktop [
-                                <a href="https://runnova.github.io/NovaOS"
-                                    >Try It</a
-                                >
-                                &bull;
-                                <a href="https://github.com/runnova/NovaOS"
-                                    >Repo</a
-                                >
-                                &bull;
-                                <a href="https://runnova.github.io/dev"
-                                    >Developer</a
-                                >
-                                &bull;
-                                <a
-                                    href="https://adthoughtsglobal.github.io/NovaSingleFile/"
-                                    >Standalone</a
-                                >
-                                (<a
-                                    href="https://github.com/adthoughtsglobal/NovaSingleFile"
-                                    >repo</a
-                                >) &bull;
-                                <a
-                                    href="https://github.com/adthoughtsglobal/Nova-Store"
-                                    >store repo</a
-                                >
-                                ]
-                            </li>
-                            <li>
-                                <a href="https://ozoneshell.github.io">
-                                    <img
-                                        src="https://avatars.githubusercontent.com/u/265530475?s=200&v=4"
-                                        alt="Ozone"
-                                    />
-                                    Ozone Shell
-                                </a>
-                                turn your webapps into shared web runtimes [<a
-                                    href="https://github.com/ozoneshell/ozoneshell"
-                                    >repo</a
-                                >]
-                            </li>
-                            <li>
-                                <a href="https://openwebdesk.github.io/apple/">
-                                    <img
-                                        src="https://openwebdesk.github.io/apple/assets/apple.png"
-                                        alt="OWD"
-                                    />
-                                    OWD apple</a
-                                >
-                                web based environment for running web worker
-                                based apps [<a
-                                    href="https://github.com/openwebdesk/apple"
-                                    >repo</a
-                                >
-                                &bull;
-                                <a href="https://github.com/openwebdesk">OWD</a
-                                >]
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        Rotur
-                        <ul>
-                            <li>
-                                <a href="https://runnova.github.io/indigo/">
-                                    <img
-                                        src="https://runnova.github.io/indigo/icon_small.svg"
-                                        alt="Indigo"
-                                    />
-                                    indigo</a
-                                >
-                                originchats client [<a
-                                    href="https://www.solidjs.com"
-                                    >SolidJS</a
-                                >
-                                &bull;
-                                <a href="https://github.com/runnova/indigo"
-                                    >repo</a
-                                >]
-                            </li>
-                            <li>
-                                deprecated
-                                <ul>
-                                    <li>
-                                        <a
-                                            href="https://runnova.github.io/orion"
-                                        >
-                                            <img
-                                                src="https://runnova.github.io/orion/oclogo.png"
-                                                alt="Orion"
-                                            />
-                                            orion</a
-                                        >
-                                        feature rich rotur client [<a
-                                            href="https://github.com/runnova/orion"
-                                            >repo</a
-                                        >]
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="https://adthoughtsglobal.github.io/Orla/"
-                                        >
-                                            <img
-                                                src="https://adthoughtsglobal.github.io/Orla/assets/favicon.png"
-                                                alt="Orla"
-                                            />
-                                            orla</a
-                                        >
-                                        CLI, themable originchats client [<a
-                                            href="https://github.com/adthoughtsglobal/Orla"
-                                            >repo</a
-                                        >]
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>miscellaneous
-
-                        <ul>
-                            <li><a href="https://adthoughtsglobal.github.io/spa/">SPA</a> a collection of useful single page apps and tools.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        upcoming
-                        <ul>
-                            <li>
-                                <a href="" class="unreadable">
-                                    <img
-                                        src="https://cdn-icons-png.flaticon.com/512/6664/6664427.png"
-                                        alt=""
-                                    />
-                                    Ledger</a
-                                >
-                                my most complicated project yet, it's on development!
-                            </li>
-                            <li>
-                                <a href="" class="unreadable">
-                                    <img src="temp/cyrus.png" alt="" />
-                                    Cyrus</a
-                                >
-                                lightweight identity and connectivity layer for
-                                P2P apps.
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                <ul id="projects"></ul>
             </div>
+        </div>
 
-            <div class="card">
-                <hr />
-                <div data-rotur-comments="darkdot" data-theme="light"></div>
-            </div>
-            <script src="https://embed.rotur.dev/embed.js"></script>
-            <script>
-                document.querySelectorAll("a").forEach((link, index) => {
-                    link.tabIndex = index + 1;
-                });
-            </script>
+        <div class="col" id="detail" aria-live="polite">
+            <p class="detail-placeholder">
+                Hover a project to read more about it.
+            </p>
         </div>
     </body>
 </html>

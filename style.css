@@ -1,7 +1,27 @@
+:root {
+    --bg-one: #080808;
+    --bg-two: #161616;
+    --bg-three: #1d1d1d;
+    --bg-four: #3a3a3a;
+    --diff-one: color-mix(in srgb, var(--bg-four) 15%, transparent);
+    --diff-two: color-mix(in srgb, var(--bg-four) 30%, transparent);
+    --diff-three: color-mix(in srgb, var(--bg-four) 45%, transparent);
+    --hl-one: #aaff2a;
+    --hl-two: #d5ff95;
+    --hl-three: #57b400;
+    --hl-four: #2d3f1d;
+    --border: 0px 0px 0 1px #fff3;
+    --fg-one: #fff;
+    --fg-two: #ffffff7a;
+    --fg-dim: #ffffffb7;
+    --fg-three: #cfa4ff;
+
+    --mode-img-filter: invert(1) hue-rotate(180deg);
+}
+
 body {
     display: flex;
     flex-direction: row;
-    gap: 3em;
     font-family:
         "Google Sans Flex",
         system-ui,
@@ -16,6 +36,8 @@ body {
         "Helvetica Neue",
         sans-serif;
     margin: 0;
+    background-color: var(--bg-one);
+    color: var(--fg-one);
 }
 
 li {
@@ -31,11 +53,17 @@ li {
     display: flex;
     flex-direction: column;
 
+    &.data {
+        max-width: 850px;
+        padding-right: 0em;
+    }
+
     &:first-child {
         flex-grow: 0;
         padding-top: 2em;
         height: calc(100vh - 3em);
-        background-color: #f9f9f9;
+        margin-right: 1.5em;
+        background-color: var(--bg-two);
         width: 300px;
         box-shadow: 1px 0 #00000027;
     }
@@ -43,6 +71,10 @@ li {
 
 .fill {
     flex-grow: 1;
+}
+
+a {
+    color: var(--hl-two);
 }
 
 b {
@@ -54,10 +86,42 @@ b {
     border-bottom: 1px solid #00000027;
 }
 
-.statuswid {
-    & b {
-        font-size: 2em !important;
-    }
+hr {
+    width: calc(100% - 1em);
+    color: var(--diff-three);
+    border-color: var(--diff-three);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--diff-three) transparent;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--diff-two);
+    border-radius: 999px;
+    border: 2px solid var(--bg-one);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--hl-three);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: var(--hl-one);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 .badges {
@@ -84,6 +148,7 @@ li {
         transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         display: inline-flex;
         text-decoration: none;
+        color: var(--hl-one);
         &:first-child {
             font-size: 20pt;
         }
@@ -91,6 +156,41 @@ li {
         &:focus {
             text-decoration: underline;
         }
+    }
+
+    li.leaf {
+        position: relative;
+        border-radius: 1em 0 0 1em;
+        padding: 0.3em 1em;
+        margin: .5em 0;
+        --tmpc: transparent;
+    }
+
+    li.leaf:hover, li.leaf.active {
+        background-color: var(--bg-two);
+        --tmpc: var(--bg-two);
+    }
+
+    li.leaf::before,
+    li.leaf::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        width: 1em;
+        height: 1em;
+        background-color: transparent;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    li.leaf::before {
+        top: -1em;
+        box-shadow: 0.5em 0.5em 0 0 var(--tmpc);
+    }
+
+    li.leaf::after {
+        bottom: -1em;
+        box-shadow: 0.5em -0.5em 0 0 var(--tmpc);
     }
 }
 
@@ -121,13 +221,14 @@ p.note {
     & > * {
         display: flex;
         flex-direction: row;
-        gap: 0.2em;
+        gap: 0.3em;
         margin-top: 0.3em;
         opacity: 0.8;
         transition: gap 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
         & > img {
             width: 13pt;
             height: 13pt;
+            filter: var(--mode-img-filter);
         }
         &:hover {
             opacity: 1;
@@ -143,4 +244,183 @@ p.note {
 
 .unreadable {
     filter: blur(3px);
+}
+
+.slideshow {
+    width: 100%;
+    overflow: hidden;
+    border-radius: .5em;
+    background: var(--bg-one);
+}
+
+.header {
+    padding: .5em .7em;
+    color: var(--fg-dim);
+    border-bottom: 1px solid var(--bg-two);
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+}
+
+.viewport {
+    position: relative;
+    min-height: 5em;
+    overflow: hidden;
+}
+
+.comment {
+    padding: 1em;
+    animation: slideUp 0.45s ease both;
+}
+
+.comment.exit {
+    animation: slideOutUp 0.35s ease both;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: .5em;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #292932;
+}
+
+.username {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.timestamp {
+    margin-top: 2px;
+    color:var(--fg-dim);
+    font-size: small;
+}
+
+.content {
+    margin-top: .5em;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5em;
+    border-top: 1px solid var(--bg-two);
+}
+
+.counter {
+    color: #9999aa;
+    font-size: 12px;
+}
+
+.controls {
+    display: flex;
+    gap: .2em;
+}
+
+button {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: .5em;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #343444;
+}
+
+button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.chevron {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.status {
+    padding: 28px 20px;
+    color: #a5a5b5;
+    text-align: center;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOutUp {
+    to {
+        opacity: 0;
+        transform: translateY(-35px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .comment,
+    .comment.exit {
+        animation: none;
+    }
+}
+
+
+#detail {
+    width: 300px;
+    background-color: var(--bg-two);
+}
+
+.leaf.active {
+    background: color-mix(in srgb, currentColor 8%, transparent);
+}
+.leaf:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+#detail .detail-head {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+#detail .detail-head img {
+    width: 2em;
+    height: 2em;
+    object-fit: contain;
+}
+#detail h2 {
+    margin: 0;
+}
+#detail .detail-short {
+    opacity: 0.6;
+}
+#detail .detail-placeholder {
+    opacity: 0.5;
 }
